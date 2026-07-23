@@ -28,6 +28,7 @@ Running the demo across a few configurations:
 | 1,000,000 | 1%       | 9,585,059 | 7  | 1.14 MB  | 1.00%       |
 
 A million items in ~1 MB with a 1% target false positive rate that lands at 1.0001% empirically.
+
 ![mind_blown](./mind_blown.gif)
 
 
