@@ -1,10 +1,10 @@
 # bloom_filter
 
-When I was taking DS&A I went on a tangent related to hashing. I really disliked the concept of tombstone hashing because it felt like I was redirecting an issue and hoping it would resolve itself later via a put hashing to the respective cluster containing a tombstone. If the user use case was a series of puts and deletes followed by contains, the tombstones would never be resolved and would carry a fractional toll at each lookup leading to the respective cluster. Although improbable with a use case of puts and deletes in random sequence, running a hash that has the possibility of devolving asymptotic lookup complexity to O(n) left a bad taste in my mouth. This is the first of three programs in a journey of mine to make something more robust. Bloom filtering is a simple project to learn about the benefits of running multiple hash functions on a singular item. Bloom filters got me comfortable with multiple hash functions which I will utilize on in my next project, [Cuckoo Filter](https://github.com/Rydilly/Cuckoo_Filter).
+When I was taking DS&A I went on a tangent related to hashing. I really disliked the concept of tombstone hashing because it felt like I was redirecting an issue and hoping it would resolve itself later via a put hashing to the respective cluster containing a tombstone. If the user use case was a series of puts and deletes followed by contains, the tombstones would never be resolved and would carry a fractional toll at each lookup leading to the respective cluster. Although improbable with a use case of puts and deletes in random sequence, running a hash that has the possibility of devolving asymptotic lookup complexity to O(n) left a bad taste in my mouth. This is the first of three programs in a journey of mine to make something more robust. Bloom filtering is a simple project to learn about the benefits of running multiple hash functions on a singular item. Bloom filters got me comfortable with multiple hash functions which I will utilize in my next project, [Cuckoo Filter](https://github.com/Rydilly/Cuckoo_Filter).
 
 ## What is a bloom filter?
 
-A bloom filter is a filter, not a hash — meaning its purpose is to know if an item has *not* been stored to the filter, or if there is a *chance* it could have been.
+A bloom filter is a filter, not a hash table— meaning its purpose is to know if an item has *not* been stored to the filter, or if there is a *chance* it could have been.
 
 ## How does it work?
 
@@ -92,11 +92,11 @@ f.contains(item)
 
 `add` and `contains` currently accept `int` or `str` keys.
 
-Running `bloom_filter.py` directly runs the demo used to generate the table above.
+Running `bloom_filter.py` if__name__== "__main__" with manually set parameters was used to generate the table above.
 
 ## What did I learn?
 
-After this project I became an advocate of DS&A curriculum including filters. They should suffice as a good introduction into hashing while also holding benefits in cache locality. Since a buffer slot was a single bit, the total space of the buffer was tiny and lookup was incredible compared to hashing due to CPU cache line restrictions.
+After this project I became an advocate of DS&A curriculum including filters. They should suffice as a good introduction into hashing while also holding benefits in cache locality. Since a buffer slot was a single bit, the total space of the buffer was tiny and lookup was unbelievably quick compared to hashing due to CPU cache line restrictions.
 
 ## When to not use a filter?
 
