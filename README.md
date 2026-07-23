@@ -54,7 +54,7 @@ To minimize $p$ over $k$, take $\frac{d(\ln p)}{dk} = 0$. The optimum lands at:
 
 $$e^{-nk/m} = \frac{1}{2}$$
 
-which is the same as saying **the filter is optimal when exactly half the bits are set** — a really pretty result.
+which is the same as saying **the filter is optimal when exactly half the bits are set** .
 
 Substituting back gives $p = (1/2)^k$, and rearranging:
 
